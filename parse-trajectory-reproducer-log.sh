@@ -15,5 +15,6 @@ echo "The log is located in: $logfile"
 
 sed -n /Position/p $logfile > temp.txt
 awk 'BEGIN{FS=" "; OFS=","} {print $1 " " $2,$7,$9,$11}' ./temp.txt >> trajectory.csv
+rm temp.txt
 
 echo "Check trajectory table"
